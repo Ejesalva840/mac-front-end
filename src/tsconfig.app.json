@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "experimentalDecorators": true,
-    "allowJs": false,
     "module": "es2015",
     "types": []
   },

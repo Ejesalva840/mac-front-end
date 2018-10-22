@@ -1,0 +1,25 @@
+<mat-drawer-container [hasBackdrop]="true" fullscreen>
+  <mat-drawer
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="'push'">
+      <app-side-bar></app-side-bar>
+  </mat-drawer>
+  <mat-drawer-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>Martial Arts Carolina - Dashboard</span>
+        <span class="fill-remaining-space"></span>
+      </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+  
