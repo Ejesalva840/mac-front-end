@@ -1,13 +1,13 @@
-<mat-drawer-container [hasBackdrop]="true" fullscreen>
-  <mat-drawer
+<mat-sidenav-container [hasBackdrop]="true" class="sidenav-container" fullscreen>
+  <mat-sidenav
     #drawer
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="'push'">
       <app-side-bar></app-side-bar>
-  </mat-drawer>
-  <mat-drawer-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
       <mat-toolbar color="primary">
         <button
           type="button"
@@ -20,6 +20,6 @@
         <span class="fill-remaining-space"></span>
       </mat-toolbar>
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
   
