@@ -1,68 +1,84 @@
 <mat-tab-group>
-    <mat-tab label="Taekwondo">
-      <mat-card>
-        <div class="mat-elevation-z8">
-          <table mat-table [dataSource]="taekwondoStudents" class="mat-elevation-z8" #taekwondoSorter="matSort" matSort>
-  
-            <!--- Note that these columns can be defined in any order.
+  <mat-tab label="Taekwondo">
+    <mat-card>
+      <div class="mat-elevation-z8">
+        <mat-table [dataSource]="taekwondoStudents" class="mat-elevation-z8" #taekwondoSorter="matSort" matSort>
+
+          <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Position Column -->
-            <ng-container matColumnDef="name" sticky='true'>
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-              <td mat-cell *matCellDef="let student"> {{student.name}} </td>
-            </ng-container>
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="belt">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Rank </th>
-              <td mat-cell *matCellDef="let student"> {{student.belt}} </td>
-            </ng-container>
-          
-            <!-- Weight Column -->
-            <ng-container matColumnDef="style">
-              <th mat-header-cell *matHeaderCellDef> Style </th>
-              <td mat-cell *matCellDef="let student"> {{student.martialStyle}} </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-            <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-          </table>
-          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #taekwondoPager></mat-paginator>
-        </div>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="Hapkido">
-      <mat-card>
-        <div class="mat-elevation-z8">
-          <table mat-table [dataSource]="hapkidoStudents" class="mat-elevation-z8" #hapkidoSorter="matSort" matSort>
-  
-              <!--- Note that these columns can be defined in any order.
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="name" sticky='true'>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="belt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.belt}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="style">
+            <mat-header-cell *matHeaderCellDef> Style </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.martialStyle}} </mat-cell>
+          </ng-container>
+
+          <!-- Is Present Column -->
+          <ng-container matColumnDef="isPresent">
+            <mat-header-cell *matHeaderCellDef> Is Present </mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let student">
+              <mat-checkbox></mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #taekwondoPager></mat-paginator>
+      </div>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Hapkido">
+    <mat-card>
+      <div class="mat-elevation-z8">
+        <mat-table [dataSource]="hapkidoStudents" class="mat-elevation-z8" #hapkidoSorter="matSort" matSort>
+
+          <!--- Note that these columns can be defined in any order.
                     The actual rendered columns are set as a property on the row definition" -->
-            
-              <!-- Position Column -->
-              <ng-container matColumnDef="name" sticky='true'>
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                <td mat-cell *matCellDef="let student"> {{student.name}} </td>
-              </ng-container>
-            
-              <!-- Name Column -->
-              <ng-container matColumnDef="belt">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Rank </th>
-                <td mat-cell *matCellDef="let student"> {{student.belt}} </td>
-              </ng-container>
-            
-              <!-- Weight Column -->
-              <ng-container matColumnDef="style">
-                <th mat-header-cell *matHeaderCellDef> Style </th>
-                <td mat-cell *matCellDef="let student"> {{student.martialStyle}} </td>
-              </ng-container>
-            
-              <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-              <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-            </table>
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #hapkidoPager></mat-paginator>          
-        </div>
-      </mat-card> 
-    </mat-tab>
-  </mat-tab-group>
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="name" sticky='true'>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="belt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.belt}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="style">
+            <mat-header-cell *matHeaderCellDef> Style </mat-header-cell>
+            <mat-cell *matCellDef="let student"> {{student.martialStyle}} </mat-cell>
+          </ng-container>
+
+          <!-- Is Present Column -->
+          <ng-container matColumnDef="isPresent">
+            <mat-header-cell *matHeaderCellDef> Is Present </mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let student">
+              <mat-checkbox></mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #hapkidoPager></mat-paginator>
+      </div>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

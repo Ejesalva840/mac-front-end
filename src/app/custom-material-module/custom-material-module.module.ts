@@ -8,8 +8,9 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule} from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import {
   MatButtonModule,
@@ -34,7 +35,8 @@ import {
     MatListModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
   ],
   declarations: []
 })

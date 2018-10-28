@@ -13,7 +13,7 @@ export class CheckInStudentComponent implements OnInit {
   hapkidoStudents: MatTableDataSource<Student>;
   taekwondoStudents: MatTableDataSource<Student>;
 
-  columnsToDisplay = ['name', 'belt', 'style'];
+  columnsToDisplay = ['name', 'belt', 'style', 'isPresent'];
 
   constructor(private studentService: StudentService) { }
 
