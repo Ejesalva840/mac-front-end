@@ -7,6 +7,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material';
 
 import {
   MatButtonModule,
@@ -28,7 +31,10 @@ import {
     MatIconModule,
     MatMenuModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   declarations: []
 })
