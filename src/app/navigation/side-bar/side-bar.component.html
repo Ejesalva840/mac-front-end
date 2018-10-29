@@ -3,6 +3,6 @@
   <span class="fill-remaining-space"></span>
 </mat-toolbar>
 <mat-list #selectionList>
-  <a mat-list-item routerLink="/checkin" routerLinkActive="active">Checkin Students</a>
-  <a mat-list-item routerLink="/search" routerLinkActive="active">Search Students</a>
+  <a mat-list-item routerLink="/checkin" (click)="closeSideNav()" routerLinkActive="active">Checkin Students</a>
+  <a mat-list-item routerLink="/search" (click)="closeSideNav()" routerLinkActive="active">Search Students</a>
 </mat-list>

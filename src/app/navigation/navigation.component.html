@@ -5,7 +5,7 @@
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="'push'">
-      <app-side-bar></app-side-bar>
+      <app-side-bar [sideBarNavComponent]="drawer"></app-side-bar>
   </mat-sidenav>
   <mat-sidenav-content>
       <mat-toolbar color="primary">
