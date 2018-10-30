@@ -2,7 +2,8 @@ import { APP_ROUTES } from './app-routes';
 import { CustomMaterialModuleModule } from './custom-material-module/custom-material-module.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -23,6 +24,7 @@ import { StudentDetailsComponent } from './navigation/student-details/student-de
     BrowserModule,
     CustomMaterialModuleModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
