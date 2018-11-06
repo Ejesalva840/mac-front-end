@@ -1,15 +1,41 @@
 <div class="container-fluid">
   <div class="row">
-      <mat-card class="col-md-4">
-          <p>
-            Student List
-          </p>
-        </mat-card>
-        
-        <mat-card class="col-md-8">
-          <p>
-            Student info details
-          </p>
-        </mat-card>
+      <mat-card [ngClass]="'col-md-4'">
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="studentsList" class="mat-elevation-z8" #studentSorter="matSort" matSort>
+  
+            <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+  
+            <!-- Position Column -->
+            <ng-container matColumnDef="name" sticky='true'>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+              <mat-cell *matCellDef="let student"> {{student.name}} </mat-cell>
+            </ng-container>
+  
+            <!-- Name Column -->
+            <ng-container matColumnDef="belt">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+              <mat-cell *matCellDef="let student"> {{student.belt}} </mat-cell>
+            </ng-container>
+  
+            <!-- Weight Column -->
+            <ng-container matColumnDef="style">
+              <mat-header-cell *matHeaderCellDef> Style </mat-header-cell>
+              <mat-cell *matCellDef="let student"> {{student.martialStyle}} </mat-cell>
+            </ng-container>
+  
+            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+          </mat-table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #studentPager></mat-paginator>
+        </div>
+      </mat-card>
+      
+      <mat-card [ngClass]="'col-md-8'">
+        <p>
+          Student info details
+        </p>
+      </mat-card>
   </div>
 </div>

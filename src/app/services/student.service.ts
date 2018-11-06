@@ -1,4 +1,4 @@
-import { MOCKSTUDENTS } from './../entities/mock-students';
+import { MOCKSTUDENTS } from '../entities/mock-students';
 import { Injectable, OnInit } from '@angular/core';
 import { Student } from '../entities/student';
 

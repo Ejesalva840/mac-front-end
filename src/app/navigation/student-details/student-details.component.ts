@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../../services/student.service';
+import { Student } from '../../entities/student';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-student-details',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentDetailsComponent implements OnInit {
 
-  constructor() { }
+  studentsList: MatTableDataSource<Student>;
+
+  columnsToDisplay = ['name', 'belt', 'style'];
+
+  constructor(private studentService: StudentService) { }
+
+  @ViewChild('studentPager') studentPager: MatPaginator;
+  @ViewChild('studentSorter') studentSorter: MatSort;
+
 
   ngOnInit() {
+    this.studentsList = new MatTableDataSource<Student>(this.studentService.getAllUsers());
+    this.studentsList.paginator = this.studentPager;
+    this.studentsList.sort = this.studentSorter;
   }
 
 }
