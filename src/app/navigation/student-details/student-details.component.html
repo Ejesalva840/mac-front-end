@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-      <mat-card [ngClass]="'col-md-4'">
+      <mat-card [ngClass]="{'col-md-4': studentDetails !== null, 'col-md-12': studentDetails === null}">
+        <mat-card-title>Student Details</mat-card-title>
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="studentsList" class="mat-elevation-z8" #studentSorter="matSort" matSort>
   
@@ -26,16 +27,21 @@
             </ng-container>
   
             <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+            <mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="selectStudent(row)" 
+              [ngClass]="{'highlight-row': studentDetails !== null && studentDetails.studentId === row.studentId}"></mat-row>
           </mat-table>
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons #studentPager></mat-paginator>
         </div>
       </mat-card>
       
-      <mat-card [ngClass]="'col-md-8'">
-        <p>
-          Student info details
-        </p>
+      <mat-card *ngIf="studentDetails !== null" [ngClass]="'col-md-8'">
+        <mat-card-title>{{ studentDetails.name }}</mat-card-title>
+        <ul>
+          <li>Date Joined: {{ studentDetails.dateJoined}}</li>
+          <li>Allergies: {{ studentDetails.allergies}}</li>
+          <li># Classes Attended in Cycle: {{ studentDetails.numberClassesPresentInCycle}}</li>
+          <li>Main Contact: {{ studentDetails.mainContact}}</li>
+        </ul>
       </mat-card>
   </div>
 </div>
