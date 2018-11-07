@@ -40,8 +40,16 @@
           <li>Date Joined: {{ studentDetails.dateJoined}}</li>
           <li>Allergies: {{ studentDetails.allergies}}</li>
           <li># Classes Attended in Cycle: {{ studentDetails.numberClassesPresentInCycle}}</li>
-          <li>Main Contact: {{ studentDetails.mainContact}}</li>
         </ul>
+        Contacts:
+        <div *ngFor="let contact of studentDetails.emergencyContacts">
+          <ul>
+            <li>Name: {{ contact.firstName}} {{ contact.lastName }}</li>
+            <li>Number: {{ contact.phoneNumber }}</li>
+            <li>Email: {{ contact.email }}</li>
+            <li>Relationship: {{ contact.relationshipWithStudent }}</li>
+          </ul>
+        </div>
       </mat-card>
   </div>
 </div>

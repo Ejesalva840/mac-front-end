@@ -1,3 +1,4 @@
+import { MOCKCONTACTS } from './mock-contacts';
 import { StudentDetails } from './student-details';
 
 export const MOCKSTUDENTDETAILS: StudentDetails[] = [
@@ -9,7 +10,10 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('07/15/2010'),
         'allergies': 'Peanuts',
         'numberClassesPresentInCycle': 2,
-        'mainContact': null
+        'emergencyContacts': [
+            MOCKCONTACTS[0],
+            MOCKCONTACTS[1]
+        ]
     },
     {
         'studentId': 2,
@@ -19,7 +23,9 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('03/12/2017'),
         'allergies': 'Eggs',
         'numberClassesPresentInCycle': 4,
-        'mainContact': null
+        'emergencyContacts': [
+            MOCKCONTACTS[2]
+        ]
     },
     {
         'studentId': 3,
@@ -29,7 +35,7 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('10/25/2018'),
         'allergies': null,
         'numberClassesPresentInCycle': 1,
-        'mainContact': null
+        'emergencyContacts': null
     },
     {
         'studentId': 4,
@@ -39,7 +45,7 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('08/01/2017'),
         'allergies': 'Peanuts, wheat',
         'numberClassesPresentInCycle': 4,
-        'mainContact': null
+        'emergencyContacts': null
     },
     {
         'studentId': 5,
@@ -49,7 +55,9 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('07/15/2010'),
         'allergies': 'Milk, Eggs',
         'numberClassesPresentInCycle': 2,
-        'mainContact': null
+        'emergencyContacts': [
+            MOCKCONTACTS[3]
+        ]
     },
     {
         'studentId': 6,
@@ -59,7 +67,7 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('09/12/2011'),
         'allergies': null,
         'numberClassesPresentInCycle': 3,
-        'mainContact': null
+        'emergencyContacts': null
     },
     {
         'studentId': 7,
@@ -69,7 +77,7 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('03/16/2012'),
         'allergies': null,
         'numberClassesPresentInCycle': 5,
-        'mainContact': null
+        'emergencyContacts': null
     },
     {
         'studentId': 8,
@@ -79,7 +87,9 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('10/05/2018'),
         'allergies': 'Peanuts, Egg',
         'numberClassesPresentInCycle': 3,
-        'mainContact': null
+        'emergencyContacts': [
+            MOCKCONTACTS[4]
+        ]
     },
     {
         'studentId': 9,
@@ -89,7 +99,7 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('09/21/2015'),
         'allergies': null,
         'numberClassesPresentInCycle': 2,
-        'mainContact': null
+        'emergencyContacts': null
     },
     {
         'studentId': 10,
@@ -99,6 +109,6 @@ export const MOCKSTUDENTDETAILS: StudentDetails[] = [
         'dateJoined': new Date('09/19/2017'),
         'allergies': 'Wheat, Egg, Milk',
         'numberClassesPresentInCycle': 5,
-        'mainContact': null
+        'emergencyContacts': null
     }
 ];

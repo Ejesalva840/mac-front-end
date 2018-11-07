@@ -9,5 +9,5 @@ export interface StudentDetails {
     'dateJoined': Date;
     'allergies': string | null;
     'numberClassesPresentInCycle': number;
-    'mainContact': Contact;
+    'emergencyContacts': Contact[];
 }
